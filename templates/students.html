@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">All Students</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {% for student in students %}
+        <div class="border p-4 rounded">
+            <img src="{{ url_for('static', filename=student.image_path) }}" alt="{{ student.name }}" class="w-full h-48 object-cover mb-2">
+            <h2 class="font-bold">{{ student.name }}</h2>
+            <p>Reg. No: {{ student.reg_number }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

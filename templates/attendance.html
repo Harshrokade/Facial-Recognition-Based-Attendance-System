@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Attendance for {{ class_name }}</h1>
+    <div id="camera-feed" class="mb-4"></div>
+    <div id="result" class="mb-4 font-bold"></div>
+    <button id="capture-btn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Capture</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
+<script>
+    Webcam.set({
+        width: 320,
+        height: 240,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    Webcam.attach('#camera-feed');
+
+    document.getElementById('capture-btn').addEventListener('click', function() {
+        Webcam.snap(function(data_uri) {
+            fetch('/process_frame', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'class_name={{ class_name }}&image_data=' + encodeURIComponent(data_uri)
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById('result').textContent = result;
+            });
+        });
+    });
+</script>
+{% endblock %}

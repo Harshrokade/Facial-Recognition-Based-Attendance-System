@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Start Attendance</h1>
+    <form action="{{ url_for('start_attendance') }}" method="post">
+        <div class="mb-4">
+            <label for="class_name" class="block text-gray-700 font-bold mb-2">Select Class:</label>
+            <select name="class_name" id="class_name" class="w-full px-3 py-2 border rounded-md">
+                <option value="Class AIDS">AI AND DS- 2</option>
+                <option value="Class IOE">Internet OF Everything</option>
+                <option value="Class SAN">storage Area Network</option>
+                <option value="Class HPC">High performance computing</option>
+                <option value="Class MANET">MANET</option>
+                <option value="Class AR-VR">AR-VR</option>
+                <option value="Class PLM">Product Lifecycle Management</option>
+            </select>
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Start Attendance</button>
+    </form>
+</div>
+{% endblock %}

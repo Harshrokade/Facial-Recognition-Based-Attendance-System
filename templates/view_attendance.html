@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Attendance Records</h1>
+    <ul>
+        {% for file in attendance_files %}
+        <li class="mb-2">
+            <a href="{{ url_for('download_attendance', filename=file) }}" class="text-blue-500 hover:underline">{{ file }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
