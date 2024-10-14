@@ -23,3 +23,36 @@ This project is a **Facial Recognition-Based Attendance System** that automates 
 3. When a match is found, the attendance for that individual is automatically logged.
 4. Attendance reports can be generated and viewed in the system or exported as needed.
 
+   ## Result & Discussion
+- This method can **detect multiple face** in one frame and can be easily used in a classroom or in an office.
+- This system helps us to achieve desired results with **better accuracy** and less time consumption.
+- The precision or the accuracy of face recognition of our model is almost **more than 90%**.
+
+## Conclusion
+Thus, the aim of this model is to capture the video of the
+students/colleagues, convert it into frames, relate it with the dataset to
+ensure their presence or absence, mark attendance to the
+particular student/colleagues to maintain the record. The Automated
+Classroom Attendance System helps in increasing the
+accuracy and speed ultimately achieve the high-precision
+real-time attendance to meet the need for automatic
+classroom evaluation.
+
+## Steps to Run
+1. Fork this repo
+2. Clone the forked repo to your local system
+3. Install the following libraries: (in **Linux** or **macOS**)
+   1. `cv2`
+   2. `face_recogniton`
+   3. `os`
+   4. `math`
+   5. `numpy`
+   6. `datetime`
+4. Add your image inside `imageData` folder in **format** -> `name.registration.jpg`, if adding more than one image of same person then **format** -> `name.registration.(0,1,2).jpg`, only after that it will recognize you. 
+5. Run the code -> `app.py`
+6. If it will recognise you, your attendance will be there in `Attendance.csv` file
+7. If you have a existing photo of class then run 'python mul.py' in the terminal and upload the photo from uploads folder and get attendance.
+
+**(Provide more than one image with different angle to get more accuracy)**
+
+
