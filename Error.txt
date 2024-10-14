@@ -1,0 +1,49 @@
+
+
+# Error: Problem Importing `face-recognition`
+
+## Issue:
+If you are encountering problems while importing the `face-recognition` library in Python, the most common issue is the lack of necessary C++ build tools or CMake on your system. This library requires compilation of certain C++ dependencies, which means you'll need to install the required build tools and CMake to resolve the issue.
+
+### Solution:
+
+### 1. Install C++ Build Tools
+You need to install the **C++ Build Tools** provided by Visual Studio.
+
+#### Steps:
+1. Visit the official download page for **Microsoft C++ Build Tools**:  
+   [Visual Studio C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+   
+2. Download the installer and follow the steps to install the **Desktop development with C++** package. Make sure to check the following components during installation:
+   - MSVC (Microsoft C++ Compiler)
+   - Windows SDK
+   - CMake tools for Windows
+   
+3. Once the installation is complete, ensure that the environment variables are properly set up by restarting your system.
+
+### 2. Install CMake
+CMake is required to build some of the dependencies for `face-recognition`.
+
+#### Steps:
+1. Download the latest version of CMake from the official site:  
+   [CMake Download Page](https://cmake.org/download/)
+   
+2. Choose the version compatible with your system (Windows, macOS, or Linux) and follow the instructions for installation.
+
+3. After installation, make sure to add CMake to your system's PATH environment variable so that it can be accessed from the command line.
+
+### 3. Reinstall `face-recognition`
+Once the C++ Build Tools and CMake are properly installed, reinstall the `face-recognition` package using pip:
+
+```bash
+pip install face-recognition
+```
+
+This should now install the library without any errors related to missing C++ build tools or CMake.
+
+### Additional Resources:
+- [Visual Studio Documentation](https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes)
+- [CMake Documentation](https://cmake.org/documentation/)
+
+---
+
